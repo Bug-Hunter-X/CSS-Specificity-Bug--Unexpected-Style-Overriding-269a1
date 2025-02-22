@@ -1,0 +1,23 @@
+The following CSS code snippet demonstrates an uncommon error related to the specificity of CSS selectors:
+
+```css
+div {
+  color: blue;
+}
+
+.my-class {
+  color: red;
+}
+
+#my-id {
+  color: green;
+}
+
+div.my-class#my-id {
+  color: purple; /* This selector will override others due to high specificity */
+}
+```
+
+In this example, the `div.my-class#my-id` selector is highly specific.  It targets an element that is simultaneously a `div`, has the class `my-class`, and the ID `my-id`. Because of this high specificity, it overrides the rules set for `div`, `.my-class`, and `#my-id`.
+
+This can become a bug if the developer is unaware of the order of specificity and expects a different color to be applied.
